@@ -1,30 +1,26 @@
 :root {
 
   --primary-white-color: #ffffff; 
-
   --title-color: #212121;
-
   --text-primary-color: #757575;
-
   --link-contact-nav-color: #757575;
   --link-footer-color: rgba(255, 255, 255, 0.6);
-
   --background-primary-color: #e5e5e5;
   --background-secondary-color: #f5f4fa;
   --background-footer-color: #2f303a;
-
   --accent-color: #2196f3;
 }
 
 body {
   font-family: "Roboto", sans-serif;
   color: var(--text-primary-color);
-  background-color: var(--background-primary-color);
+  /* background-color: var(--background-primary-color); */
+  background-color: var(--primary-white-color);
   letter-spacing: 0.03em;
   font-size: 14px;
 }
 
-/* сбрасывает базовые стили*/
+/* классы-утилиты*/
 .list {
   list-style: none;
   padding: 0;
@@ -39,9 +35,22 @@ body {
 .address {
   font-style: normal;
 }
+
+.section{
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
 /* END */
 
+.container{
+  width: 1170px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
 
+  outline: 2px solid blue;
+}
 /* BUTTON */
 .button {
   font-family: inherit;
@@ -79,6 +88,32 @@ body {
 /* BUTTON END */
 
 /* HEADER */
+.navigation{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-nav{
+  margin-right: auto;
+}
+
+.site-nav-list{
+  display: flex;
+}
+
+.site-nav-item:not(:last-child){
+  margin-right: 50px;
+}
+
+.contact-nav-list{
+  display: flex;
+}
+
+.contact-nav-item:not(:last-child){
+  margin-right: 50px;
+}
+
 
 .logo {
   font-family: "Raleway", sans-serif;
@@ -87,6 +122,10 @@ body {
   line-height: 1.2;
   color: var(--title-color);
   text-decoration: none;
+
+  padding-top: 24px;
+  padding-bottom: 24px;
+  margin-right: 93px;
 }
 
 .logo-blue {
@@ -109,6 +148,7 @@ body {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  color: inherit;
 }
 
 .header .link:hover,
@@ -124,13 +164,15 @@ body {
 /* HERO */
 .hero {
   background-color: var(--background-footer-color);
+  text-align: center;
 }
 
 .hero-title {
+  margin-top: 0;
+  margin-bottom: 30px;
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--primary-white-color);
@@ -139,6 +181,7 @@ body {
 
 /* SECTION */
 .section-title {
+  margin-top: 0;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
