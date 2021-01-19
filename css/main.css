@@ -1,6 +1,5 @@
 :root {
-
-  --primary-white-color: #ffffff; 
+  --primary-white-color: #ffffff;
   --title-color: #212121;
   --text-primary-color: #757575;
   --link-contact-nav-color: #757575;
@@ -20,7 +19,27 @@ body {
   font-size: 14px;
 }
 
-/* классы-утилиты*/
+/*сброс стилей от браузера*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+}
+
 .list {
   list-style: none;
   padding: 0;
@@ -35,15 +54,10 @@ body {
 .address {
   font-style: normal;
 }
-
-.section{
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
 /* END */
 
-.container{
-  width: 1170px;
+.container {
+  width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
@@ -53,17 +67,20 @@ body {
 }
 /* BUTTON */
 .button {
+  border-radius: 4px;
+
   font-family: inherit;
   font-size: 16px;
   cursor: pointer;
 }
 .button.primary {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
   font-weight: 700;
   line-height: 1.87;
   text-align: center;
   color: var(--primary-white-color);
   background-color: var(--accent-color);
-
   letter-spacing: 0.06em;
 }
 
@@ -88,44 +105,50 @@ body {
 /* BUTTON END */
 
 /* HEADER */
-.navigation{
+.navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.site-nav{
+.site-nav {
   margin-right: auto;
 }
 
-.site-nav-list{
+.site-nav-list {
   display: flex;
 }
 
-.site-nav-item:not(:last-child){
+.site-nav-link,
+.contact-nav-link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.site-nav-item:not(:last-child) {
   margin-right: 50px;
 }
 
-.contact-nav-list{
+.contact-nav-list {
   display: flex;
 }
 
-.contact-nav-item:not(:last-child){
+.contact-nav-item:not(:last-child) {
   margin-right: 50px;
 }
-
 
 .logo {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  margin-right: 93px;
+
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.2;
   color: var(--title-color);
   text-decoration: none;
-
-  padding-top: 24px;
-  padding-bottom: 24px;
-  margin-right: 93px;
 }
 
 .logo-blue {
@@ -170,6 +193,7 @@ body {
 .hero-title {
   margin-top: 0;
   margin-bottom: 30px;
+
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -180,8 +204,16 @@ body {
 /* HERO END */
 
 /* SECTION */
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
 .section-title {
   margin-top: 0;
+  margin-bottom: 50px;
+
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
@@ -189,9 +221,10 @@ body {
   color: var(--title-color);
 }
 
-
 /* FEATURE */
 .feature-title {
+  margin-bottom: 10px;
+
   font-weight: 700;
   font-size: inherit;
   line-height: 1.14;
@@ -206,12 +239,51 @@ body {
 }
 /* FEATURE  END*/
 
+/* DIRECTIONS */
+.directions {
+  padding-bottom: 94px;
+}
+
+.directions-list {
+  display: flex;
+}
+
+.directions-item {
+  width: calc((100% - 30 * 2px) / 3);
+}
+
+.directions-item:not(:last-child) {
+  margin-right: 30px;
+}
+
 /* TEAM */
-.time{
+.time {
   background-color: var(--background-secondary-color);
 }
 
+.time-list {
+  display: flex;
+}
+
+.time-card {
+  text-align: center;
+  width: calc((100% - 3 * 30px) / 4);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+
+.time-card:not(:last-child) {
+  margin-right: 30px;
+}
+
+.time-image {
+  margin-bottom: 30px;
+}
+
 .time-title {
+  margin-bottom: 10px;
+
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
@@ -219,12 +291,13 @@ body {
 }
 
 .time-text {
+  padding-bottom: 30px;
+
   font-weight: 400;
   font-size: 16px;
   line-height: 1.19;
 }
 /* OUR-TEAM END*/
-
 
 /* PORTFOLIO */
 .works-title {
@@ -245,7 +318,17 @@ body {
 
 /* FOOTER */
 .footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
   background-color: var(--background-footer-color);
+}
+
+.footer .logo {
+  display: block;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 .footer-address,
@@ -255,7 +338,13 @@ body {
 }
 
 .footer-address {
+  margin-bottom: 9px;
+
   color: var(--primary-white-color);
+}
+
+.footer-item:not(:last-child) {
+  margin-bottom: 9px;
 }
 
 .footer-tel {
