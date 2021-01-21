@@ -349,7 +349,6 @@ img {
 
 .works-list-item {
   width: calc((100% - 2 * 30px) / 3);
-  background: var(--primary-white-color);
   border: 1px solid #eeeeee;
 }
 
@@ -361,7 +360,15 @@ img {
   margin-right: 30px;
 }
 
-.works-title {
+.works-list-info{
+  padding: 20px 24px;
+
+  background-color: var(--primary-white-color);
+}
+
+.works-list-title {
+  margin-bottom: 4px;
+
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
@@ -369,7 +376,7 @@ img {
   color: var(--title-color);
 }
 
-.works-text {
+.works-list-text {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.87;
