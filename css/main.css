@@ -4,7 +4,6 @@
   --text-primary-color: #757575;
   --link-contact-nav-color: #757575;
   --link-footer-color: rgba(255, 255, 255, 0.6);
-  --background-primary-color: #e5e5e5;
   --background-secondary-color: #f5f4fa;
   --background-footer-color: #2f303a;
   --accent-color: #2196f3;
@@ -13,7 +12,6 @@
 body {
   font-family: "Roboto", sans-serif;
   color: var(--text-primary-color);
-  /* background-color: var(--background-primary-color); */
   background-color: var(--primary-white-color);
   letter-spacing: 0.03em;
   font-size: 14px;
@@ -39,6 +37,9 @@ ol {
 img {
   display: block;
 }
+/* END */
+
+/* классы-утилиты */
 
 .list {
   list-style: none;
@@ -54,7 +55,17 @@ img {
 .address {
   font-style: normal;
 }
-/* END */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 
 .container {
   width: 1200px;
@@ -63,17 +74,38 @@ img {
   margin-left: auto;
   margin-right: auto;
 
-  outline: 2px solid blue;
 }
+/* END */
+
+/* SECTION */
+.section-padding {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.section-title {
+  margin-top: 0;
+  margin-bottom: 50px;
+
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  color: var(--title-color);
+}
+
 /* BUTTON */
 .button {
+  border: 1px solid transparent;
   border-radius: 4px;
+  padding: 6px, 22px;
 
   font-family: inherit;
   font-size: 16px;
   cursor: pointer;
 }
 .button.primary {
+  border: 1px solid var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
   font-weight: 700;
@@ -85,6 +117,7 @@ img {
 }
 
 .button.secondary {
+  border: 1px solid var(--background-secondary-color);
   font-weight: 500;
   line-height: 1.62;
   text-align: center;
@@ -107,7 +140,6 @@ img {
 /* HEADER */
 .navigation {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -182,6 +214,10 @@ img {
 .link.current {
   color: var(--accent-color);
 }
+
+.header-bottom-line{
+  border-bottom: 1px solid #ECECEC;;
+}
 /* HEADER END */
 
 /* HERO */
@@ -203,25 +239,20 @@ img {
 }
 /* HERO END */
 
-/* SECTION */
-
-.section {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
-
-.section-title {
-  margin-top: 0;
-  margin-bottom: 50px;
-
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
-  text-align: center;
-  color: var(--title-color);
-}
-
 /* FEATURE */
+
+.feature-list {
+  display: flex;
+}
+
+.feature-list-item {
+  width: calc((100% - 3 * 30px) / 4);
+}
+
+.feature-list-item:not(:last-child) {
+  margin-right: 30px;
+}
+
 .feature-title {
   margin-bottom: 10px;
 
@@ -248,13 +279,14 @@ img {
   display: flex;
 }
 
-.directions-item {
+.directions-list-item {
   width: calc((100% - 30 * 2px) / 3);
 }
 
-.directions-item:not(:last-child) {
+.directions-list-item:not(:last-child) {
   margin-right: 30px;
 }
+/* DIRECTIONS END*/
 
 /* TEAM */
 .time {
@@ -265,15 +297,16 @@ img {
   display: flex;
 }
 
-.time-card {
+.time-list-item {
   text-align: center;
   width: calc((100% - 3 * 30px) / 4);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+  padding-bottom: 30px;
 }
 
-.time-card:not(:last-child) {
+.time-list-item:not(:last-child) {
   margin-right: 30px;
 }
 
@@ -291,15 +324,43 @@ img {
 }
 
 .time-text {
-  padding-bottom: 30px;
-
   font-weight: 400;
   font-size: 16px;
   line-height: 1.19;
 }
-/* OUR-TEAM END*/
+/* TEAM END */
 
 /* PORTFOLIO */
+
+.buttons-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.buttons-list-item:not(:last-child) {
+  margin-right: 8px;
+}
+
+.works-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.works-list-item {
+  width: calc((100% - 2 * 30px) / 3);
+  background: var(--primary-white-color);
+  border: 1px solid #eeeeee;
+}
+
+.works-list-item:not(:nth-last-child(-n + 3)) {
+  margin-bottom: 30px;
+}
+
+.works-list-item:not(:nth-child(3n)) {
+  margin-right: 30px;
+}
+
 .works-title {
   font-weight: 700;
   font-size: 18px;
@@ -343,7 +404,7 @@ img {
   color: var(--primary-white-color);
 }
 
-.footer-item:not(:last-child) {
+.footer-list-item:not(:last-child) {
   margin-bottom: 9px;
 }
 
