@@ -221,7 +221,7 @@ img {
   color: var(--accent-color);
 }
 
-.header-bottom-line{
+.header.header-bottom-line{
   border-bottom: 1px solid #ECECEC;;
 }
 /* HEADER END */
@@ -430,3 +430,5 @@ img {
   color: var(--accent-color);
 }
 /* FOOTER END*/
+
+
